@@ -1,0 +1,58 @@
+# 1. Markdown code block language list
+Which languages are supported, heavily depends on the Markdown parser you’re using. What follows here, is a list of many common languages and formats that you can try. If your language isn’t in here, I suggest you simply try if it is supported. Alternatively, visit the documentation of your specific Markdown.
+
+Here’s the list of commonly supported languages on sites like GitHub:
+
+- actionscript3
+- apache
+- applescript
+- asp
+- brainfuck
+- c
+- cfm
+- clojure
+- cmake
+- coffee-script, coffeescript, coffee
+- cpp – C++
+- cs
+- csharp
+- css
+- csv
+- bash
+- diff
+- elixir
+- erb – HTML + Embedded Ruby
+- go
+- haml
+- http
+- java
+- javascript
+- json
+- jsx
+- less
+- lolcode
+- make – Makefile
+- markdown
+- matlab
+- nginx
+- objectivec
+- pascal
+- PHP
+- Perl
+- python
+- profile – python profiler output
+- rust
+- salt, saltstate – Salt
+- shell, sh, zsh, bash – Shell scripting
+- scss
+- sql
+- svg
+- swift
+- rb, jruby, ruby – Ruby
+- smalltalk
+- vim, viml – Vim Script
+- volt
+- vhdl
+- vue
+- xml – XML and also used for HTML with inline CSS and Javascript
+- yaml
