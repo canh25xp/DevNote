@@ -53,7 +53,7 @@ pkill sshd
 
 4. Tips
 
-- Launch termux using adb
+- Launch termux using [[adb]]
 
 ```sh
 adb shell am start -n com.termux/.HomeActivity
