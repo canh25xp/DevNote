@@ -1,5 +1,3 @@
-
-
 | Abbreviation | Definition                    | Note                          |
 | ------------ | ----------------------------- | ----------------------------- |
 | SSSI         | Samsung Single System Image   |                               |

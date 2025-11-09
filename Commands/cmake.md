@@ -2,5 +2,5 @@
 
 ```
 cmake --build . -- /verbosity:detailed
-cmake --build . -- -v:normal  
+cmake --build . -- -v:normal
 ```

@@ -2,7 +2,7 @@
 
 - Install F-DROID
 
-``` sh
+```sh
 curl -LO https://f-droid.org/F-Droid.apk
 adb install F-DROID.apk
 ```
@@ -11,17 +11,16 @@ adb install F-DROID.apk
 
 - Initial setup
 
-``` sh
+```sh
 pkg update && pkg upgrade -y
 ```
 
 - Get permission : Go to `Settings` -> `Apps` -> `Termux` -> `Permissions` -> `Files and media` `Allow`
 
 2. Connect to termux via USB
->
-> https://wiki.termux.com/wiki/Remote_Access
->
-> https://glow.li/posts/access-termux-via-usb/
+   > https://wiki.termux.com/wiki/Remote_Access
+   >
+   > https://glow.li/posts/access-termux-via-usb/
 
 - On termux
 
@@ -58,5 +57,3 @@ pkill sshd
 ```sh
 adb shell am start -n com.termux/.HomeActivity
 ```
-
-

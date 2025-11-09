@@ -1,4 +1,5 @@
 # Microsoft Edge shortcuts
+
 > https://support.microsoft.com/en-us/microsoft-edge/keyboard-shortcuts-in-microsoft-edge-50d3edab-30d9-c7e4-21ce-37fe2713cfad
 
 | Press this key        | To do this                                                                     |
@@ -10,9 +11,9 @@
 | Ctrl + Shift + E      | Open search in sidebar                                                         |
 | Alt + D               | Select the URL in the address bar to edit                                      |
 | Ctrl + E              | Open a search query in the address bar                                         |
-| Alt + E               | Open the Settings and more  menu                                               |
+| Alt + E               | Open the Settings and more menu                                                |
 | Ctrl + F              | Open find on page                                                              |
-| Alt + F               | Open the Settings and more  menu                                               |
+| Alt + F               | Open the Settings and more menu                                                |
 | Ctrl + G              | Jump to the next result for find on page                                       |
 | Ctrl + Shift + G      | Jump to the previous result for find on page                                   |
 | Ctrl + H              | Open History                                                                   |
@@ -52,10 +53,10 @@
 | Ctrl + Plus (+)       | Zoom in                                                                        |
 | Ctrl + Minus (-)      | Zoom out                                                                       |
 | Ctrl + \ (in a PDF)   | Toggle PDF between fit to page / fit to width                                  |
-| Ctrl + [ (in a PDF)   | Rotate PDF counter-clockwise 90*                                               |
-| Ctrl + ] (in a PDF)   | Rotate PDF clockwise 90*                                                       |
+| Ctrl + [ (in a PDF)   | Rotate PDF counter-clockwise 90\*                                              |
+| Ctrl + ] (in a PDF)   | Rotate PDF clockwise 90\*                                                      |
 | Ctrl + Shift + Delete | Open clear browsing data options                                               |
-| Alt                   | Set focus on the Settings and more  button                                     |
+| Alt                   | Set focus on the Settings and more button                                      |
 | Alt + Left arrow      | Go back                                                                        |
 | Alt + Right arrow     | Go forward                                                                     |
 | Alt + Home            | Open your home page in the current tab                                         |
@@ -71,8 +72,8 @@
 | Ctrl + F6             | Move focus to the web content pane                                             |
 | F7                    | Turn caret browsing on or off                                                  |
 | F9                    | Enter or exit Immersive Reader                                                 |
-| F10                   | Set focus on the Settings and more  button                                     |
-| F10 + Enter           | Open Setting and more  menu                                                    |
+| F10                   | Set focus on the Settings and more button                                      |
+| F10 + Enter           | Open Setting and more menu                                                     |
 | Shift + F10           | Open context menu                                                              |
 | F11                   | Enter full screen (toggle)                                                     |
 | F12                   | Open Developer Tools                                                           |
