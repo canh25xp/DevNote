@@ -7,7 +7,7 @@
     - [x] Delta merge
     - [ ] Integrate into Cline workflow
 - [ ] QB API
-    - [/] QB API access request
+    - [x] QB API access request ✅ 2025-11-14
 - [ ] Gauss open API
     - [/] API access request
 - [ ] Figma MCP server
@@ -19,9 +19,9 @@
 - [ ] Image to mermaid markdown
 - [ ] The ART of command line
     - [ ] Seminar preparation
-        - [ ] What is CLI ? Type of CLI application
+        - [x] What is CLI ? Type of CLI application ✅ 2025-11-14
         - [ ] Some common CLI guideline
-        - [ ] My daily CLI applications
+        - [x] My daily CLI applications
         - [ ] Slides making
 - [ ] Obsidian
     - [x] WTF is Obsidian ?
