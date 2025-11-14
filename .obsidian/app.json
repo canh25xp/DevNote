@@ -2,5 +2,6 @@
   "vimMode": true,
   "showLineNumber": true,
   "readableLineLength": false,
-  "showInlineTitle": false
+  "showInlineTitle": false,
+  "useTab": false
 }
