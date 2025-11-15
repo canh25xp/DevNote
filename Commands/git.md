@@ -53,3 +53,17 @@ git restore -s my-feature-branch pathTo/MyFile # restore from other branch
 ```bash
 git read-tree HEAD && GIT_LFS_SKIP_SMUDGE=1 git checkout -f HEAD
 ```
+
+## Clone via [[ssh]]
+
+On the local machine:
+
+```sh
+git remote add ssh ssh://u0_a353@localhost:8022/~/.local/share/chezmoi
+```
+
+On the remote machine:
+
+```sh
+git config receive.denyCurrentBranch updateInstead # this allow you to push to remote machine
+```
