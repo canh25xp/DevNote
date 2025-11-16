@@ -1,41 +1,51 @@
+---
+id: TODO
+aliases:
+  - tasks
+tags:
+  - todo
+---
+
 # TODO list
 
-- [!] QB error analysis
+- [-] QB error analysis
     - [x] Error log extract
-- [ ] Bring-up tool
+- [!] Bring-up tool
     - [x] Find bring-up related files
     - [x] Delta merge
-    - [ ] Integrate into Cline workflow
+    - [/] Integrate into Cline workflow
 - [ ] QB API
     - [x] QB API access request ✅ 2025-11-14
 - [ ] Gauss open API
-    - [/] API access request
+    - [x] API access request
 - [ ] Figma MCP server
-    - [/] Figma access request
+    - [x] Figma access request
     - [ ] How TF does MCP works ?
     - [ ] WTF is Figma ?
-- [-] `p5`: a better `p4` CLI application
-- [-] `p4t`: a TUI application for `p4`
-- [ ] Image to mermaid markdown
-- [ ] The ART of command line
-    - [ ] Seminar preparation
+- [<] `p5`: a better `p4` CLI application
+- [<] `p4t`: a TUI application for `p4`
+- [!] Image to mermaid markdown
+- [/] The ART of command line
+    - [/] Seminar preparation
         - [x] What is CLI ? Type of CLI application ✅ 2025-11-14
         - [ ] Some common CLI guideline
         - [x] My daily CLI applications
         - [ ] Slides making
-- [ ] Obsidian
+- [x] Obsidian
     - [x] WTF is Obsidian ?
-    - [ ] Obsidian.nvim
+    - [x] Obsidian.nvim
 - [ ] Cline
     - [ ] Auto trigger build CL
 
-# Notes
+> [!NOTE]
+>
+> - [ ] Not started
+> - [/] Half Done/In-progress
+> - [-] Dropped/Cancelled
+> - [<] On hold/Scheduling
+> - [>] Transferred/Forwarded
+> - [?] Doubt/Question
+> - [!] Important
+> - [x] Completed
 
-| Symbol | Meaning             |
-| ------ | ------------------- |
-| `[ ]`  | Not started         |
-| `[/]`  | In progress         |
-| `[x]`  | Done                |
-| `[-]`  | On hold             |
-| `[>]`  | Deferred            |
-| `[!]`  | Aborted / cancelled |
+Keep up good works !
