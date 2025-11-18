@@ -36,6 +36,11 @@ tags:
     - [x] Obsidian.nvim
 - [ ] Cline
     - [ ] Auto trigger build CL
+- [ ] Android local build
+    - [x] SecSettings local build
+    - [/] `wpa_supplicant` local build
+        - [ ] Minimize local build size
+        - [ ] Native debug
 
 > [!NOTE]
 >
