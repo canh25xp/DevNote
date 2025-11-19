@@ -1,3 +1,11 @@
+---
+id: linux
+aliases: []
+tags:
+  - unix
+  - bash
+---
+
 # Linux
 
 ## Add new user
@@ -20,4 +28,10 @@ apt update && apt upgrade && apt install adduser sudo
 adduser username
 usermod -aG sudo username
 su - username
+```
+
+## Type password without display to the terminal nor save to bash history file
+
+```bash
+read -s -p "Enter P4 password: " P4PASSWD
 ```
