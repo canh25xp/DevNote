@@ -8,8 +8,9 @@ tags:
 
 # TODO list
 
-- [-] QB error analysis
+- [!] QB error analysis
     - [x] Error log extract
+    - [ ] Get affected files
 - [!] Bring-up tool
     - [x] Find bring-up related files
     - [x] Delta merge
