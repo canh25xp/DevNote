@@ -3,6 +3,7 @@ id: git
 aliases: []
 tags: []
 ---
+
 # git
 
 ## To list committed files in git branch
@@ -88,4 +89,14 @@ Sort by commits
 
 ```sh
 git shortlog -sne
+```
+
+## Rewrite authorEmail
+
+```sh
+git filter-repo --force --email-callback '
+if email == b"vancanh.ng@samsung.com":
+  return b"nv.canh@outlook.com"
+return email
+'
 ```
