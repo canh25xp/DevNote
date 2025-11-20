@@ -42,6 +42,7 @@ tags:
     - [/] `wpa_supplicant` local build
         - [ ] Minimize local build size
         - [ ] Native debug
+- [ ] Confluence REST API
 
 > [!NOTE]
 >
