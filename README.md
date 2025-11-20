@@ -5,6 +5,8 @@
 
 ![DevNote|100](./assests/DevNote-LightYagami.png)
 
+## Overview
+
 Not the best Arrangement that I came up with, but here a quick overview of what you can expect for each folder
 
 ```
@@ -21,3 +23,10 @@ DevNote
 ├── Schematic           Circuit diagrams
 └── Specifications      Technical specifications.
 ```
+
+> [!NOTE]
+>
+> - What goes to **Commands**, what goes to **Guides** ?
+>     - If it's complex, require multiple steps and involve several tools to archive a goal, then it goes in **Guides**
+>     - If it's Simple, can be done in a 1 commands or 2, then just put it in **Commands**
+> - **Random** only meant for temporary notes, when I have not yet decided where to put it.
