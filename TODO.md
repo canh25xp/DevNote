@@ -44,6 +44,7 @@ tags:
         - [ ] Native debug
 - [ ] Confluence REST API
 - [ ] Convert PDF, PNG, ... to plain markdown file if possible
+- [x] Obsidian Mobile setup ✅ 2025-11-20
 
 > [!NOTE]
 >
