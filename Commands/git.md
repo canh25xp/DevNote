@@ -1,3 +1,8 @@
+---
+id: git
+aliases: []
+tags: []
+---
 # git
 
 ## To list committed files in git branch
@@ -66,4 +71,21 @@ On the remote machine:
 
 ```sh
 git config receive.denyCurrentBranch updateInstead # this allow you to push to remote machine
+```
+
+## List all contributors
+
+Sort by name
+
+```sh
+# authorName authorEmail
+git log --format='%aN <%aE>' | sort -u
+# committerName committerEmail
+git log --format='%cN <%cE>' | sort -u
+```
+
+Sort by commits
+
+```sh
+git shortlog -sne
 ```
