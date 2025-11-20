@@ -1,3 +1,8 @@
+---
+id: helix-swarm
+aliases: []
+tags: []
+---
 # Swarm API
 
 ## Authentication
