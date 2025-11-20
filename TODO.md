@@ -43,6 +43,7 @@ tags:
         - [ ] Minimize local build size
         - [ ] Native debug
 - [ ] Confluence REST API
+- [ ] Convert PDF, PNG, ... to plain markdown file if possible
 
 > [!NOTE]
 >
