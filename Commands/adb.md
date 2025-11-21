@@ -1,3 +1,9 @@
+---
+id: adb
+aliases: []
+tags: []
+---
+
 # ADB
 
 ## Commands
@@ -45,4 +51,18 @@ adb shell getprop ro.bootimage.build.fingerprint
 
 ```sh
 adb shell settings put global wifi_verbose_logging_enabled 1
+```
+
+## adb shell init
+
+`adb shell` command read the following init file:
+
+- `/system/etc/mkshrc`
+- `/system/etc/profile`
+- `$HOME/.profile`
+
+## Collect dumpstate
+
+```sh
+adb shell cmd activity bug-report
 ```
