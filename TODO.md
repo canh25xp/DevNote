@@ -43,6 +43,8 @@ tags:
         - [ ] Minimize local build size
         - [ ] Native debug
 - [ ] Confluence REST API
+    - [x] Confluence API access request
+    - [ ] Confluence get page api request.
 - [ ] Convert PDF, PNG, ... to plain markdown file if possible
 - [x] Obsidian Mobile setup ✅ 2025-11-20
 
