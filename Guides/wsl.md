@@ -1,3 +1,8 @@
+---
+id: wsl
+aliases: []
+tags: []
+---
 # WSL
 
 ## Check your available disk space
@@ -18,4 +23,13 @@ https://learn.microsoft.com/en-us/windows/wsl/disk-space
 
 ```sh
 echo -e "[user]\ndefault=user" | sudo tee /etc/wsl.conf > /dev/null
+```
+
+## Copy between windows and WSL
+
+```sh
+# From WSL to windows
+cp file.txt /mnt/c/Users/User/
+# From windows to WSL
+cp file.txt \\wsl.localhost\Ubuntu\home\user\
 ```
