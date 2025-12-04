@@ -11,3 +11,9 @@ tags:
 ```vim
 :%s/'\([^']*\)'/"\1"/g
 ```
+
+## Filter a TAG with `rg`
+
+```sh
+rg '\b\w+\s+\d+\s+\d+\s+\w\s+wpa_supplicant:' log.txt
+```
