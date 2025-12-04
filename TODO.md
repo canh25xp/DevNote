@@ -19,8 +19,10 @@ tags:
     - [ ] Generate bring-up general knowledge using a collection of bring-up CLs.
 - [ ] QB API
     - [x] QB API access request ✅ 2025-11-14
-- [ ] Gauss open API
+- [x] Gauss open API
     - [x] API access request
+    - [x] Request chat api
+    - [-] Attach pdf to request. (Does not seem to be possible)
 - [ ] Figma MCP server
     - [x] Figma access request
     - [ ] How TF does MCP works ?
@@ -44,9 +46,9 @@ tags:
     - [/] `wpa_supplicant` local build
         - [ ] Minimize local build size
         - [ ] Native debug
-- [ ] Confluence REST API
+- [x] Confluence REST API
     - [x] Confluence API access request
-    - [ ] Confluence get page api request.
+    - [x] Confluence get page api request.
 - [ ] Convert PDF, PNG, ... to plain markdown file if possible
 - [x] Obsidian Mobile setup ✅ 2025-11-20
 - [ ] Google's _Mobly_ research
