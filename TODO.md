@@ -10,11 +10,13 @@ tags:
 
 - [!] QB error analysis
     - [x] Error log extract
-    - [ ] Get affected files
+    - [x] Get affected files
+    - [ ] VS code, Cline, P4 environment setup script.
 - [!] Bring-up tool
     - [x] Find bring-up related files
     - [x] Delta merge
     - [/] Integrate into Cline workflow
+    - [ ] Generate bring-up general knowledge using a collection of bring-up CLs.
 - [ ] QB API
     - [x] QB API access request ✅ 2025-11-14
 - [ ] Gauss open API
@@ -47,6 +49,7 @@ tags:
     - [ ] Confluence get page api request.
 - [ ] Convert PDF, PNG, ... to plain markdown file if possible
 - [x] Obsidian Mobile setup ✅ 2025-11-20
+- [ ] Google's _Mobly_ research
 
 > [!NOTE]
 >
