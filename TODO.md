@@ -11,7 +11,8 @@ tags:
 - [!] QB error analysis
     - [x] Error log extract
     - [x] Get affected files
-    - [ ] VS code, Cline, P4 environment setup script.
+    - [x] VS code, Cline, P4 environment setup script.
+    - [ ] Write guide for setup VS code, Cline, P4 environment setup script.
 - [!] Bring-up tool
     - [x] Find bring-up related files
     - [x] Delta merge
@@ -52,6 +53,9 @@ tags:
 - [ ] Convert PDF, PNG, ... to plain markdown file if possible
 - [x] Obsidian Mobile setup ✅ 2025-11-20
 - [ ] Google's _Mobly_ research
+- [ ] Facebook 's [faiss](https://github.com/facebookresearch/faiss)
+- [ ] Simple RAG
+    - [ ] Automatically extract figures, images from PDF file.
 
 > [!NOTE]
 >
