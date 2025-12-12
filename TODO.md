@@ -30,7 +30,7 @@ tags:
     - [ ] WTF is Figma ?
 - [<] `p5`: a better `p4` CLI application
 - [<] `p4t`: a TUI application for `p4`
-- [!] Image to mermaid markdown
+- [-] Image to mermaid markdown
 - [/] The ART of command line
     - [/] Seminar preparation
         - [x] What is CLI ? Type of CLI application ✅ 2025-11-14
