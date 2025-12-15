@@ -1,7 +1,9 @@
 ---
 id: build
 aliases: []
-tags: []
+tags:
+  - aosp
+  - android
 ---
 
 # Samsung AOSP build
@@ -187,3 +189,16 @@ Refer to sCL@31907049 (Could be remove in the future)
 **Cause**: usually out of memory, check logs to confirm killed process reason `dmesg | tail -20`
 
 **Solution**: either reduces parallel threads `m -j4 wpa_supplicant` or increase swap size
+
+### Check which clang version is use
+
+There are multiple clang version in the workspace, located at `android/prebuilts/clang/host/linux-x86/`.
+To check which version is used, check the file `android/build/soong/cc/config/global.go`
+
+```
+	// prebuilts/clang default settings.
+	ClangDefaultBase         = "prebuilts/clang/host"
+	ClangDefaultVersion      = "clang-r522817"
+	ClangDefaultShortVersion = "18"
+```
+
