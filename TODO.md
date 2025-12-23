@@ -12,13 +12,13 @@ tags:
     - [x] Error log extract
     - [x] Get affected files
     - [x] VS code, Cline, P4 environment setup script.
-    - [ ] Write guide for setup VS code, Cline, P4 environment setup script.
+    - [x] Write guide for setup VS code, Cline, P4 environment setup script.
 - [!] Bring-up tool
     - [x] Find bring-up related files
     - [x] Delta merge
     - [/] Integrate into Cline workflow
     - [ ] Generate bring-up general knowledge using a collection of bring-up CLs.
-- [ ] QB API
+- [x] QB API
     - [x] QB API access request ✅ 2025-11-14
 - [x] Gauss open API
     - [x] API access request
@@ -32,16 +32,16 @@ tags:
 - [<] `p4t`: a TUI application for `p4`
 - [-] Image to mermaid markdown
 - [/] The ART of command line
-    - [/] Seminar preparation
+    - [x] Seminar preparation
         - [x] What is CLI ? Type of CLI application ✅ 2025-11-14
-        - [ ] Some common CLI guideline
+        - [x] Some common CLI guideline
         - [x] My daily CLI applications
-        - [ ] Slides making
+        - [x] Slides making
 - [x] Obsidian
     - [x] WTF is Obsidian ?
     - [x] Obsidian.nvim
-- [ ] Cline
-    - [ ] Auto trigger build CL
+- [-] Cline
+    - [-] Auto trigger build CL
 - [ ] Android local build
     - [x] SecSettings local build
     - [/] `wpa_supplicant` local build
@@ -53,9 +53,9 @@ tags:
 - [ ] Convert PDF, PNG, ... to plain markdown file if possible
 - [x] Obsidian Mobile setup ✅ 2025-11-20
 - [ ] Google's _Mobly_ research
-- [ ] Facebook 's [faiss](https://github.com/facebookresearch/faiss)
-- [ ] Simple RAG
-    - [ ] Automatically extract figures, images from PDF file.
+- [>] Facebook 's [faiss](https://github.com/facebookresearch/faiss)
+- [/] Simple RAG
+    - [x] Automatically extract figures, images from PDF file.
 
 > [!NOTE]
 >
