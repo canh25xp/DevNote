@@ -130,8 +130,43 @@ echo $ANDROID_HOME
 ### Workspace templates
 
 <details>
-<summary>B-OS (BENI)</summary>
+<summary>V-OS (VINCE)</summary>
+<div style="max-height: 24rem; overflow:auto;" markdown="1">
 
+```
+//DEV/Application/Settings/WORKING/LocalBuild/VINCE/... //[Your workspace]/...
+//VINCE/SYSTEM/Cinnamon/applications/sources/apps/SecSettings/... //[Your workspace]/SecSettings/...
+-//VINCE/SYSTEM/Cinnamon/applications/sources/apps/SecSettings/tests/... //[Your workspace]/SecSettings/tests/...
+//VINCE/SYSTEM/Cinnamon/frameworks/base/packages/SettingsLib/... //[Your workspace]/SettingsLib/...
+//VINCE/SYSTEM/Cinnamon/frameworks/opt/net/wifi/libs/WifiTrackerLib/... //[Your workspace]/WifiTrackerLib/...
+//VINCE/SYSTEM/Cinnamon/frameworks/base/packages/SystemUI/unfold/... //[Your workspace]/SystemUI/unfold/...
+//VINCE/SYSTEM/Cinnamon/frameworks/base/packages/SystemUI/shared/biometrics/... //[Your workspace]/SystemUI/shared/biometrics/...
+//VINCE/SYSTEM/Cinnamon/applications/sources/apps/SecSettingsIntelligence/glance_lib/sesl*-glance-* //[Your workspace]/SecSettings/glance_lib/sesl*-glance-*
+//DEV/Application/Settings/WORKING/LocalBuild/VINCE/*/build.gradle //[Your workspace]/*/build.gradle
+//DEV/Application/Settings/WORKING/LocalBuild/VINCE/*/*/build.gradle //[Your workspace]/*/*/build.gradle
+//DEV/Application/Settings/WORKING/LocalBuild/VINCE/*/*/*/build.gradle //[Your workspace]/*/*/*/build.gradle
+-//VINCE/SYSTEM/Cinnamon/frameworks/base/packages/SettingsLib/*/build.gradle.kts //[Your workspace]/SettingsLib/*/build.gradle.kts
+-//VINCE/SYSTEM/Cinnamon/frameworks/base/packages/SettingsLib/*/*/build.gradle.kts //[Your workspace]/SettingsLib/*/*/build.gradle.kts
+-//VINCE/SYSTEM/Cinnamon/applications/sources/apps/SecSettings/tests/... //[Your workspace]/SecSettings/SecSettings/tests/...
+//VINCE/SYSTEM/Cinnamon/applications/sources/apps/SecSettings/tests/secrobotests/... //[Your workspace]/SecSettings/tests/secrobotests/...
+//VINCE/SYSTEM/Cinnamon/applications/sources/apps/SecSettings/tests/secuitests/... //[Your workspace]/SecSettingsUITests/tests/secuitests/...
+-//VINCE/SYSTEM/Cinnamon/applications/sources/apps/SecSettings/res/values-*/strings.xml //[Your workspace]/SecSettings/res/values-*/strings.xml
+-//VINCE/SYSTEM/Cinnamon/applications/sources/apps/SecSettings/res/values-*/arrays.xml //[Your workspace]/SecSettings/res/values-*/arrays.xml
+-//VINCE/SYSTEM/Cinnamon/applications/sources/apps/SecSettings/samsung/*/res/values-*/strings.xml //[Your workspace]/SecSettings/samsung/*/res/values-*/strings.xml
+-//VINCE/SYSTEM/Cinnamon/applications/sources/apps/SecSettings/samsung/*/res/values-*/arrays.xml //[Your workspace]/SecSettings/samsung/*/res/values-*/arrays.xml
+-//VINCE/SYSTEM/Cinnamon/frameworks/base/packages/SettingsLib/res/values-*/strings.xml //[Your workspace]/SettingsLib/res/values-*/strings.xml
+-//VINCE/SYSTEM/Cinnamon/frameworks/base/packages/SettingsLib/res/values-*/arrays.xml //[Your workspace]/SettingsLib/res/values-*/arrays.xml
+-//VINCE/SYSTEM/Cinnamon/frameworks/opt/net/wifi/libs/WifiTrackerLib/res/values-*/strings.xml //[Your workspace]/WifiTrackerLib/res/values-*/strings.xml
+-//VINCE/SYSTEM/Cinnamon/frameworks/opt/net/wifi/libs/WifiTrackerLib/res/values-*/arrays.xml //[Your workspace]/WifiTrackerLib/res/values-*/arrays.xml
+-//VINCE/SYSTEM/Cinnamon/frameworks/opt/net/wifi/libs/WifiTrackerLib/samsung/*/res/values-*/strings.xml //[Your workspace]/WifiTrackerLib/samsung/*/res/values-*/strings.xml
+-//VINCE/SYSTEM/Cinnamon/frameworks/opt/net/wifi/libs/WifiTrackerLib/samsung/*/res/values-*/arrays.xml //[Your workspace]/WifiTrackerLib/samsung/*/res/values-*/arrays.xml
+
+```
+</div>
+</details>
+
+<details>
+<summary>B-OS (BENI)</summary>
 <div style="max-height: 24rem; overflow:auto;" markdown="1">
 
 ```
@@ -166,7 +201,35 @@ echo $ANDROID_HOME
 -//BENI/SYSTEM/Cinnamon/frameworks/opt/net/wifi/libs/WifiTrackerLib/samsung/*/res/values-*/strings.xml //[Your workspace]/WifiTrackerLib/samsung/*/res/values-*/strings.xml
 -//BENI/SYSTEM/Cinnamon/frameworks/opt/net/wifi/libs/WifiTrackerLib/samsung/*/res/values-*/arrays.xml //[Your workspace]/WifiTrackerLib/samsung/*/res/values-*/arrays.xml
 ```
-
 </div>
+</details>
 
+<details>
+<summary>C-OS (COOSA)</summary>
+<div style="max-height: 24rem; overflow:auto;" markdown="1">
+
+```
+//DEV/Application/Settings/WORKING/LocalBuild/COOSA/... //[Your workspace]/...
+//COOSA/SYSTEM_Q2/Cinnamon/applications/sources/apps/SecSettings/... //[Your workspace]/SecSettings/...
+//COOSA/SYSTEM_Q2/Cinnamon/frameworks/base/packages/SettingsLib/... //[Your workspace]/SettingsLib/...
+//COOSA/SYSTEM_Q2/Cinnamon/frameworks/base/packages/SettingsLib/Graph/graph.proto //[Your workspace]/SettingsLib/Graph/protos/graph.proto
+//COOSA/SYSTEM_Q2/Cinnamon/frameworks/opt/net/wifi/libs/WifiTrackerLib/... //[Your workspace]/WifiTrackerLib/...
+//COOSA/SYSTEM_Q2/Cinnamon/frameworks/base/packages/SystemUI/unfold/... //[Your workspace]/SystemUI/unfold/...
+//COOSA/SYSTEM_Q2/Cinnamon/frameworks/base/packages/SystemUI/shared/biometrics/... //[Your workspace]/SystemUI/shared/biometrics/...
+//COOSA/SYSTEM_Q2/Cinnamon/frameworks/base/packages/SystemUI/utils/... //[Your workspace]/SystemUI/utils/...
+//COOSA/SYSTEM_Q2/Cinnamon/frameworks/base/libs/WindowManager/Shell/shared/src/com/android/wm/shell/shared/desktopmode/... //[Your workspace]/WindowManager/Shell/shared/src/com/android/wm/shell/shared/desktopmode/...
+//COOSA/SYSTEM_Q2/Cinnamon/frameworks/base/libs/WindowManager/Shell/shared/src/com/android/wm/shell/shared/bubbles/BubbleAnythingFlagHelper.java //[Your workspace]/WindowManager/Shell/shared/src/com/android/wm/shell/shared/bubbles/BubbleAnythingFlagHelper.java
+//COOSA/SYSTEM_Q2/Strawberry/ESSI/android/frameworks/libs/systemui/dynamiccolors/... //[Your workspace]/dynamiccolors/...
+//COOSA/SYSTEM_Q2/Strawberry/ESSI/android/frameworks/libs/systemui/iconloaderlib/... //[Your workspace]/iconloaderlib/...
+//COOSA/SYSTEM_Q2/Strawberry/ESSI/android/frameworks/libs/systemui/viewcapturelib/... //[Your workspace]/viewcapturelib/...
+//COOSA/SYSTEM_Q2/Cinnamon/applications/sources/apps/SecSettingsIntelligence/glance_lib/sesl*-glance-* //[Your workspace]/SecSettings/glance_lib/sesl*-glance-*
+//DEV/Application/Settings/WORKING/LocalBuild/COOSA/.../build.gradle //[Your workspace]/.../build.gradle
+-//COOSA/SYSTEM_Q2/Cinnamon/applications/sources/apps/SecSettings/tests/... //[Your workspace]/SecSettings/SecSettings/tests/...
+//COOSA/SYSTEM_Q2/Cinnamon/applications/sources/apps/SecSettings/tests/secrobotests/... //[Your workspace]/SecSettings/tests/secrobotests/...
+//COOSA/SYSTEM_Q2/Cinnamon/applications/sources/apps/SecSettings/tests/secuitests/... //[Your workspace]/SecSettingsUITests/tests/secuitests/...
+-//COOSA/SYSTEM_Q2/.../build.gradle.kts //[Your workspace]/.../build.gradle.kts
+-//COOSA/SYSTEM_Q2/.../res/values-*/strings.xml //[Your workspace]/.../res/values-*/strings.xml
+-//COOSA/SYSTEM_Q2/.../res/values-*/arrays.xml //[Your workspace]/.../res/values-*/arrays.xml
+```
+</div>
 </details>
