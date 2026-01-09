@@ -111,6 +111,13 @@ echo $ANDROID_HOME
     echo "sdk.dir=/home/vancanh-ng/android" > local.properties
     ```
 
+The build output is at `./SecSettings/build/outputs/apk/debug/SecSettings-debug.apk`.
+Install it with
+
+```sh
+adb install SecSettings/build/outputs/apk/debug/SecSettings-debug.apk
+```
+
 ## Tips and Troubleshoots
 
 1. Set P4IGNORES
