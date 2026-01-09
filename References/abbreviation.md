@@ -4,6 +4,7 @@ aliases:
   - acronym
 tags: []
 ---
+
 | Abbreviation | Definition                    | Note                          |
 | ------------ | ----------------------------- | ----------------------------- |
 | SSSI         | Samsung Single System Image   |                               |
@@ -14,3 +15,4 @@ tags: []
 | TF           | Task Force                    |                               |
 | MR           | Maintenance Releases          |                               |
 | SMR          | Security Maintenance Releases |                               |
+| KP           | Kernal Panic                  |                               |
