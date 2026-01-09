@@ -9,7 +9,7 @@ tags:
 
 > [!NOTE]
 > This guide will use pure CLI only. So you at least comfortable to work with tools like `sdkmanager`, `p4`, `adb`, `gradle`, ...
-> Works with B-OS (BENI) up to ONE UI 8.5
+> Tested on VINCE (V-OS), BENI (B-OS), COOSA (C-OS)
 
 **Perquisites**:
 
