@@ -127,7 +127,12 @@ echo $ANDROID_HOME
 
 ## Appendix
 
-### Workspace template (B-OS)
+### Workspace templates
+
+<details>
+<summary>B-OS (BENI)</summary>
+
+<div style="max-height: 24rem; overflow:auto;" markdown="1">
 
 ```
 //DEV/Application/Settings/WORKING/LocalBuild/BENI/... //[Your workspace]/...
@@ -161,3 +166,7 @@ echo $ANDROID_HOME
 -//BENI/SYSTEM/Cinnamon/frameworks/opt/net/wifi/libs/WifiTrackerLib/samsung/*/res/values-*/strings.xml //[Your workspace]/WifiTrackerLib/samsung/*/res/values-*/strings.xml
 -//BENI/SYSTEM/Cinnamon/frameworks/opt/net/wifi/libs/WifiTrackerLib/samsung/*/res/values-*/arrays.xml //[Your workspace]/WifiTrackerLib/samsung/*/res/values-*/arrays.xml
 ```
+
+</div>
+
+</details>
