@@ -26,8 +26,9 @@ tags:
     - [-] Attach pdf to request. (Does not seem to be possible)
 - [ ] Figma MCP server
     - [x] Figma access request
-    - [ ] How TF does MCP works ?
-    - [ ] WTF is Figma ?
+    - [x] How TF does MCP works ?
+    - [x] WTF is Figma ?
+    - [ ] Get GUI document from Figma programmatically
 - [<] `p5`: a better `p4` CLI application
 - [<] `p4t`: a TUI application for `p4`
 - [-] Image to mermaid markdown
