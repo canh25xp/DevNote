@@ -24,11 +24,11 @@ tags:
     - [x] API access request
     - [x] Request chat api
     - [-] Attach pdf to request. (Does not seem to be possible)
-- [ ] Figma MCP server
+- [-] Figma MCP server
     - [x] Figma access request
     - [x] How TF does MCP works ?
     - [x] WTF is Figma ?
-    - [ ] Get GUI document from Figma programmatically
+    - [x] Get GUI document from Figma programmatically
 - [<] `p5`: a better `p4` CLI application
 - [<] `p4t`: a TUI application for `p4`
 - [-] Image to mermaid markdown
