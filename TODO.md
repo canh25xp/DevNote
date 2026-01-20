@@ -57,6 +57,7 @@ tags:
 - [>] Facebook 's [faiss](https://github.com/facebookresearch/faiss)
 - [/] Simple RAG
     - [x] Automatically extract figures, images from PDF file.
+- [ ] `glazewm`: Allow Stacks pane like `komorebi`, maybe using a virtual desktop ?
 
 > [!NOTE]
 >
