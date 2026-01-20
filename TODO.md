@@ -57,6 +57,11 @@ tags:
 - [>] Facebook 's [faiss](https://github.com/facebookresearch/faiss)
 - [/] Simple RAG
     - [x] Automatically extract figures, images from PDF file.
+    - [ ] Cline automate workflow / new task
+    - [ ] Fix out of memory problem
+    - [ ] Cline hooks to get user feedback
+- [/] ML Coursera Project
+    - [ ] Reproduce Wi-Fi roaming issue on fold 7
 - [ ] `glazewm`: Allow Stacks pane like `komorebi`, maybe using a virtual desktop ?
 
 > [!NOTE]
