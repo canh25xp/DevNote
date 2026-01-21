@@ -32,7 +32,7 @@ tags:
 - [<] `p5`: a better `p4` CLI application
 - [<] `p4t`: a TUI application for `p4`
 - [-] Image to mermaid markdown
-- [/] The ART of command line
+- [x] The ART of command line
     - [x] Seminar preparation
         - [x] What is CLI ? Type of CLI application ✅ 2025-11-14
         - [x] Some common CLI guideline
