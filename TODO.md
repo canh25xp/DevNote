@@ -61,8 +61,13 @@ tags:
     - [ ] Fix out of memory problem
     - [ ] Cline hooks to get user feedback
 - [/] ML Coursera Project
-    - [ ] Reproduce Wi-Fi roaming issue on fold 7
+    - [x] Reproduce Wi-Fi roaming issue on fold 7
 - [ ] `glazewm`: Allow Stacks pane like `komorebi`, maybe using a virtual desktop ?
+- [ ] Wi-Fi core knowledge:
+    - [ ] What is Silence roaming ?
+    - [ ] What is IWH, ILA, ICC ?
+- [ ] Android knowledge:
+    - [ ] Reverse engineering with `apktool`
 
 > [!NOTE]
 >
