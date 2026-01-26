@@ -43,21 +43,15 @@ tags:
     - [x] Obsidian.nvim
 - [-] Cline
     - [-] Auto trigger build CL
-- [ ] Android local build
-    - [x] SecSettings local build
-    - [/] `wpa_supplicant` local build
-        - [ ] Minimize local build size
-        - [ ] Native debug
 - [x] Confluence REST API
     - [x] Confluence API access request
     - [x] Confluence get page api request.
-- [ ] Convert PDF, PNG, ... to plain markdown file if possible
+- [-] Convert PDF, PNG, ... to plain markdown file if possible
 - [x] Obsidian Mobile setup ✅ 2025-11-20
-- [ ] Google's _Mobly_ research
 - [>] Facebook 's [faiss](https://github.com/facebookresearch/faiss)
 - [/] Simple RAG
     - [x] Automatically extract figures, images from PDF file.
-    - [ ] Cline automate workflow / new task
+    - [-] Cline automate workflow / new task
     - [ ] Fix out of memory problem
     - [ ] Cline hooks to get user feedback
 - [/] ML Coursera Project
@@ -68,6 +62,12 @@ tags:
     - [ ] What is IWH, ILA, ICC ?
 - [ ] Android knowledge:
     - [ ] Reverse engineering with `apktool`
+    - [ ] Debugging native framework code of Android Java applications
+    - [ ] Google's _Mobly_ research
+    - [ ] Android local build
+        - [x] SecSettings local build
+        - [/] `wpa_supplicant` local build
+            - [ ] Minimize local build size
 
 > [!NOTE]
 >
