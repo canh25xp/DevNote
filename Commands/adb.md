@@ -66,3 +66,13 @@ adb shell settings put global wifi_verbose_logging_enabled 1
 ```sh
 adb shell cmd activity bug-report
 ```
+
+## Pull apk from device
+
+```sh
+adb shell pm list packages | grep "wifi.ai" # First find the package
+# package:com.samsung.android.wifi.ai
+adb shell pm path com.samsung.android.wifi.ai # Get the apk path
+# /system/app/WifiAiService/WifiAiService.apk
+adb pull /system/app/WifiAiService/WifiAiService.apk # pull the apk
+```
