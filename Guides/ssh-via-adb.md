@@ -8,73 +8,78 @@ tags:
   - android
 ---
 
-# `ssh` via `adb`
+# SSH via ADB
+
+This guide explains how to establish SSH connections between your PC and an Android device using ADB (Android Debug Bridge) and Termux.
+This method is useful for remote access to your Android device without requiring root access or Wi-Fi.
 
 ## Prerequisites
 
-You would need
+You will need:
 
-- In the your PC: `adb`
-- In the Android device: termux
-- In both device: `ssh` (Depends on which device connect to which, you would need openssh-server either openssh-client)
+- On your PC: `adb`
+- On the Android device: Termux
+- On both devices: `ssh` (Depending on which device connects to which, you'll need either openssh-server or openssh-client)
 
-## From PC to android
+## From PC to Android
 
-- On android device
+- On the Android device:
 
 ```sh
-pkg install openssh # install openssh
-sshd # start OpenSSH daemon on port 8022
-whoami # remember this username
-passwd # setup password that later use to connect
+pkg install openssh  # Install OpenSSH
+sshd                 # Start the OpenSSH daemon on port 8022
+whoami               # Remember this username
+passwd               # Set up a password for later connection
 ```
 
-- On PC
+- On your PC:
 
 ```sh
 adb forward tcp:10022 tcp:8022
 ssh u0_a343@localhost -p 10022
 ```
 
-Where `u0_a343` is the `username` (find out by running `whoami`)
+> Replace `u0_a343` with the username you obtained by running `whoami` on your Android device.
 
-When ask `Are you sure you want to continue connecting (yes/no/[fingerprint])?`
+When prompted with `Are you sure you want to continue connecting (yes/no/[fingerprint])?`, type `yes` and then enter the password you set earlier.
 
-Choose `yes` and then type in the client password
-
-To stop shh tunnel
+To stop the SSH tunnel
 
 ```sh
 pkill sshd # on Android
 adb forward --remove tcp:10022 # on PC
 ```
 
-Tips: Launch termux using [[adb]]
+### Tips: Launch Termux using ADB
+
+You can launch Termux directly from your PC using ADB:
 
 ```sh
 adb shell am start -n com.termux/.HomeActivity
 ```
 
-## From android to PC
+## From Android to PC
 
-- On PC
+- On your PC:
 
 ```sh
 sudo apt install openssh-server
-sudo systemctl start ssh.service # this start openssh daemon on port 22
-adb reverse tcp:10022 tcp:22
+sudo systemctl start ssh.service  # Start the OpenSSH daemon on port 22
+adb reverse tcp:10022 tcp:22      # Forward traffic from Android to PC
 ```
 
-- On android
+- On the Android device:
 
 ```sh
 ssh vancanh-ng@localhost -p 10022
 ```
 
-Stop ssh runnel
+> Replace `vancanh-ng` with your actual username on the PC.
+
+Stop the SSH tunnel
 
 ```sh
-sudo systemctl start ssh.service # on PC
+sudo systemctl stop ssh.service # on PC
 adb reverse --remove tcp:10022 # on PC
 ```
 
