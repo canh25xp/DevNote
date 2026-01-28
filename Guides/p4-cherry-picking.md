@@ -7,6 +7,8 @@ tags:
 
 # Cherry picking with `p4` cli
 
+> References: https://portal.perforce.com/s/article/3385
+
 1. First make sure both branch is mapped to your workspace
 
 ```sh
