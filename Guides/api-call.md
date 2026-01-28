@@ -19,3 +19,5 @@ tags:
 - **Groq**: `https://api.groq.com/openai/v1`
 - **Ollama**: `http://localhost:11434/v1/`
 - **Ollama (cloud)**: `https://ollama.com/v1`
+
+TODO: API call example with `curl`, `http`
