@@ -53,6 +53,13 @@ adb shell getprop ro.bootimage.build.fingerprint
 adb shell settings put global wifi_verbose_logging_enabled 1
 ```
 
+- Enable/Disable Wi-Fi
+
+```sh
+adb shell svc wifi enable
+adb shell svc wifi disable
+```
+
 ## adb shell init
 
 `adb shell` command read the following init file:
