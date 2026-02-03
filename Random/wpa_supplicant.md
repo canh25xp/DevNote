@@ -1,3 +1,9 @@
+---
+id: wpa_supplicant
+aliases: []
+tags: []
+---
+
 # Wi-Fi connect using command line via `wpa_supplicant` and `wpa_cli`
 
 ## Open shell as root
@@ -70,3 +76,17 @@ pkill -f wpa_supplicant
 rm /data/vendor/wifi/wpa/wpa_supplicant.conf
 ```
 
+## Screen on/off behaviour
+
+`wpa_supplicant` send `SETSUSPENDMODE=1` to driver after screen turn off for 3-5 seconds (Need to confirm in source code)
+and `SETSUSPENDMODE=0` after screen turn back on.
+
+```sh
+$ adb logcat *:S wpa_supplicant:* -e SETSUSPENDMODE
+--------- beginning of main
+02-03 09:45:10.013 12924 12924 I wpa_supplicant: wpa_driver_nl80211_driver_cmd: wlan0 recv cmd SETSUSPENDMODE 1
+02-03 09:46:22.903 12924 12924 I wpa_supplicant: wpa_driver_nl80211_driver_cmd: wlan0 recv cmd SETSUSPENDMODE 0
+02-03 09:46:25.878 12924 12924 I wpa_supplicant: wpa_driver_nl80211_driver_cmd: wlan0 recv cmd SETSUSPENDMODE 1
+02-03 09:46:33.252 12924 12924 I wpa_supplicant: wpa_driver_nl80211_driver_cmd: wlan0 recv cmd SETSUSPENDMODE 0
+02-03 09:46:37.923 12924 12924 I wpa_supplicant: wpa_driver_nl80211_driver_cmd: wlan0 recv cmd SETSUSPENDMODE 1
+```
