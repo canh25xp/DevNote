@@ -68,6 +68,7 @@ tags:
         - [x] SecSettings local build
         - [/] `wpa_supplicant` local build
             - [ ] Minimize local build size
+- [ ] `adb` startup script
 
 > [!NOTE]
 >
