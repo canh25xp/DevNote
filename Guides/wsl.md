@@ -13,6 +13,12 @@ wsl --system -d <distribution-name> df -h /mnt/wslg/distro
 
 https://learn.microsoft.com/en-us/windows/wsl/disk-space
 
+## Free-up vhdx space
+
+```ps
+Optimize-VHD -Path path\to\ext4.vhdx -Mode Full
+```
+
 ## Locate the .vhdx file and disk path for your Linux distribution
 
 ```powershell
