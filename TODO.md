@@ -52,14 +52,15 @@ tags:
 - [/] Simple RAG
     - [x] Automatically extract figures, images from PDF file.
     - [-] Cline automate workflow / new task
-    - [ ] Fix out of memory problem
-    - [ ] Cline hooks to get user feedback
+    - [-] Fix out of memory problem
+    - [-] Cline hooks to get user feedback
 - [/] ML Coursera Project
     - [x] Reproduce Wi-Fi roaming issue on fold 7
 - [ ] `glazewm`: Allow Stacks pane like `komorebi`, maybe using a virtual desktop ?
 - [ ] Wi-Fi core knowledge:
     - [ ] What is Silence roaming ?
     - [ ] What is IWH, ILA, ICC ?
+    - [ ] Android Mobile Hotspot (MHS) code trace
 - [ ] Android knowledge:
     - [ ] Reverse engineering with `apktool`
     - [ ] Debugging native framework code of Android Java applications
@@ -69,6 +70,9 @@ tags:
         - [/] `wpa_supplicant` local build
             - [ ] Minimize local build size
 - [ ] `adb` startup script
+- [ ] MemOS
+    - [ ] Run with local model via Ollama
+- [ ] Email reply: Request to check the issue of transferring to One UI9.0 / C OS
 
 > [!NOTE]
 >
