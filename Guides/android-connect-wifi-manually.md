@@ -17,7 +17,7 @@ That is, without touching the Android Application or Framework layer.
 The goal is simple, using only the CLI tools available in `adb shell`, I should be able to connect to Wi-Fi, have internet access and be able to ping `https://example.com/`.
 Since after all, android is just another linux machine.
 
-I shall not cheating with the command like `adb shell svc wifi enable`.
+I shall not cheating with the `cmd` service helper command like described in [[android-connect-to-wi-fi-manually-via-adb]].
 
 For the test subject, I'm going to use the Galaxy A15 (SM-A155F) phone,
 but this should be the same for any android phone really.
