@@ -35,3 +35,9 @@ su - username
 ```bash
 read -s -p "Enter P4 password: " P4PASSWD
 ```
+
+## Check sha256sum
+
+```sh
+sha256sum -c SHA256SUMS --ignore-missing
+```
