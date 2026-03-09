@@ -8,11 +8,23 @@ tags:
 
 # Debian Wi-Fi usage
 
-## Manual
+This guide provides step-by-step instructions for manually connecting to Wi-Fi networks on Debian systems using `wpa_supplicant` and related tools.
+Expect to be doing manually as much as possible, for education purposes.
 
-### Disable network services
+## Prerequisites
 
-First disable any services that currently managing network so that we can manage it ourself
+Before starting, ensure you have the following packages installed:
+
+```sh
+sudo apt update
+sudo apt install wpasupplicant iw dhcpcd-base
+```
+
+## Manual Connection Process
+
+### 1. Disable Network Management Services
+
+First, stop any existing network management services that might interfere with manual configuration:
 
 ```sh
 sudo systemctl stop wpa_supplicant.service
@@ -20,11 +32,15 @@ sudo systemctl stop networking.service
 sudo systemctl stop NetworkManager.service
 ```
 
-### Check available interfaces
+### 2. Identify Your Wireless Interface
+
+Check available wireless interfaces to identify which one to use:
 
 ```sh
 iw dev
 ```
+
+**Expected output example:**
 
 ```console
 $ iw dev
@@ -44,21 +60,44 @@ phy#0
 			0	0	0	0	0	0	0	0		0
 ```
 
-Interface: wlo1
-MAC address: 94:e6:f7:e4:bb:55
+In this example:
 
-### Start `wpa_supplicant` as daemon
+- **Interface name:** `wlo1`
+- **MAC address:** `94:e6:f7:e4:bb:55`
+- **Type:** managed (suitable for client connections)
 
-Create a minimal `wpa_supplicant` config file
-
-```toml
-# /etc/wpa_supplicant/wpa_supplicant.conf
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-```
+**Alternative commands to check interfaces:**
 
 ```sh
-wpa_supplicant -Dnl80211 -dd -B -iwlo1 -c/etc/wpa_supplicant/wpa_supplicant.conf
+ip link show
+```
+
+### 3. Configure wpa_supplicant
+
+Create a minimal `wpa_supplicant` configuration file:
+
+```sh
+sudo tee /etc/wpa_supplicant/wpa_supplicant.conf > /dev/null <<EOF
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+EOF
+
+# Set appropriate permissions
+sudo chmod 600 /etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+**Configuration file explanation:**
+
+- `ctrl_interface`: Enables communication with `wpa_cli` tool
+- `update_config=1`: Allows `wpa_cli` to update the configuration file
+- `country`: Optional but recommended to comply with local regulations
+
+### 4. Start wpa_supplicant as a Daemon
+
+Launch `wpa_supplicant` in the background:
+
+```sh
+sudo wpa_supplicant -Dnl80211 -dd -B -iwlo1 -c/etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
 ```console
@@ -337,21 +376,29 @@ P2P: cli_channels:
 Daemonize..
 ```
 
-### Authenticate with `wpa_cli`
+**Command options explained:**
+
+- `-Dnl80211`: Use the nl80211 driver (modern Linux wireless driver interface)
+- `-B`: Run in background (daemon mode)
+- `-i wlo1`: Specify the interface (replace with your interface name)
+- `-c /etc/wpa_supplicant/wpa_supplicant.conf`: Configuration file path
+
+**Verify the service is running:**
+
+```sh
+# Check if wpa_supplicant process is running
+ps aux | grep wpa_supplicant
+
+# Check if control interface is available
+ls -la /var/run/wpa_supplicant/
+```
+
+### 5. Authenticate with `wpa_cli`
+
+Use `wpa_cli` to scan for networks and configure your connection:
 
 ```console
-$ wpa_cli
-wpa_cli v2.10
-Copyright (c) 2004-2022, Jouni Malinen <j@w1.fi> and contributors
-
-This software may be distributed under the terms of the BSD license.
-See README for more details.
-
-
-Selected interface 'wlo1'
-
-Interactive mode
-
+$ sudo wpa_cli
 > status
 wpa_state=DISCONNECTED
 p2p_device_address=94:e6:f7:e4:bb:56
@@ -457,7 +504,29 @@ OK
 > q
 ```
 
-At this point device has Successfully authenticate, but does not have IP yet
+**Alternative: Non-interactive connection using wpa_passphrase:**
+
+For a more streamlined approach, you can generate the configuration and connect without interactive mode:
+
+```sh
+# Generate configuration for your network
+wpa_passphrase "YourNetworkSSID" "YourNetworkPassword" | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf
+
+# Restart wpa_supplicant with the new configuration
+sudo pkill wpa_supplicant
+sudo wpa_supplicant -Dnl80211 -B -i wlo1 -c /etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+### 6. Verify Wireless Connection
+
+Check that the wireless interface is properly connected:
+
+```sh
+ip addr show wlo1
+ip link show wlo1
+```
+
+**Expected output (connected):**
 
 ```console
 $ ip addr show wlo1
@@ -467,12 +536,20 @@ $ ip addr show wlo1
     altname wlx94e6f7e4bb55
 ```
 
-### Request IPv4
+**Key indicators of successful connection:**
+
+- `state UP` in the interface line
+- `LOWER_UP` flag present
+- MAC address visible
+
+### 7. Request IPv4
+
+Now that you're authenticated to the wireless network, you need to obtain an IP address.
 
 #### Using `dhcpcd`
 
 ```sh
-dhcpcd -n wlo1
+sudo dhcpcd -n wlo1
 ```
 
 ```console
@@ -493,44 +570,55 @@ wlo1: soliciting a DHCPv6 lease
 wlo1: ADV fdb4:b9e8:9cf::125/128 from fe80::46a5:6eff:fe3e:45de (0)
 ```
 
+```sh
+# Check DHCP client status
+ps aux | grep dhcpcd
+
+# View DHCP lease information
+cat /var/lib/dhcpcd/wlo1.lease
+```
+
 #### Manually add IPv4
 
-Assuming the AP already preserved "192.168.1.125" for us:
+Assuming the AP already preserved "192.168.1.125" for us (static IP)
 
 ```sh
-ip addr add 192.168.1.125/24 dev wlo1
-ip route add default via 192.168.1.1 dev wlo1
+# Assign static IP address
+sudo ip addr add 192.168.1.125/24 dev wlo1
+# Set default gateway
+sudo ip route add default via 192.168.1.1 dev wlo1
+
+# Optional: Add DNS servers
+echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
+echo "nameserver 8.8.4.4" | sudo tee -a /etc/resolv.conf
 ```
 
-```console
-root@wifiteam-laptop-debian:~# ip route
+**Important notes for manual configuration:**
 
-root@wifiteam-laptop-debian:~# ip addr add 192.168.1.125/24 dev wlo1
+- Replace `192.168.1.125` with your desired IP address
+- Replace `192.168.1.1` with your router's IP address
+- Ensure the IP is within your network's subnet range
+- Choose an IP that doesn't conflict with DHCP assignments
 
-root@wifiteam-laptop-debian:~# ip route
-192.168.1.0/24 dev wlo1 proto kernel scope link src 192.168.1.125
+### 8. Verify Network Connectivity
 
-root@wifiteam-laptop-debian:~# ip addr show wlo1
-3: wlo1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
-    link/ether 94:e6:f7:e4:bb:55 brd ff:ff:ff:ff:ff:ff
-    altname wlp0s20f3
-    altname wlx94e6f7e4bb55
-    inet 192.168.1.125/24 scope global wlo1
-       valid_lft forever preferred_lft forever
-
-root@wifiteam-laptop-debian:~# ip route add default via 192.168.1.1 dev wlo1
-
-root@wifiteam-laptop-debian:~# ip route
-default via 192.168.1.1 dev wlo1
-192.168.1.0/24 dev wlo1 proto kernel scope link src 192.168.1.125
-```
-
-### Check IPv4
+Check that you have proper network connectivity:
 
 ```sh
 ip addr show wlo1
 ip route
+
+# Test DNS resolution
+nslookup google.com
+
+# Test connectivity
+ping -c 4 8.8.8.8
+ping -c 4 google.com
 ```
+
+**Expected output examples:**
+
+**IP address check:**
 
 ```console
 $ ip addr show wlo1
@@ -558,3 +646,6 @@ default via 192.168.1.1 dev wlo1 proto dhcp src 192.168.1.125 metric 3003
 
 - [Debian Wi-Fi How to use](https://wiki.debian.org/WiFi/HowToUse)
 - [Debian NetworkConfiguration](https://wiki.debian.org/NetworkConfiguration)
+- [wpa_supplicant documentation](https://w1.fi/wpa_supplicant/)
+- [Linux Wireless Documentation](https://wireless.wiki.kernel.org/)
+
