@@ -49,7 +49,7 @@ ps -Af -u wifi
 You should **NOT** be able to see `wpa_supplicant` running like below
 
 ```console
-root@a15:/sdcard$ ps -Af -u wifi
+$ ps -Af -u wifi
 UID            PID  PPID C STIME TTY          TIME CMD
 wifi          1138     1 0 00:46 ?        00:00:00 vendor.samsung.hardware.wifi-service
 wifi          1317     1 0 00:48 ?        00:00:00 wlan_assistant
@@ -69,7 +69,7 @@ iw dev
 Look for something like `wlan0`
 
 ```console
-root@a15:/sdcard$ iw dev
+$ iw dev
 phy#0
         Interface p2p1
                 ifindex 57
@@ -95,20 +95,27 @@ ip a show wlan0
 ```
 
 ```console
-root@a15:/sdcard$ ip a show wlan0
+$ ip a show wlan0
 53: wlan0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 3000
     link/ether 92:9c:72:86:bb:7f brd ff:ff:ff:ff:ff:ff
+```
+
+Alternatively, just looking under `/sys/class/net` for interface name like `wlan0`, `wlo1`, `enp0s31f6`, `wlp1s7`,...
+
+```console
+$ cat /sys/class/net/wlan0/address
+92:9c:72:86:bb:7f
 ```
 
 ### Start `wpa_supplicant`
 
 Run `wpa_supplicant` daemon in background
 
-```
+```sh
 /vendor/bin/hw/wpa_supplicant -iwlan0 -Dnl80211 -dd -B -O/data/vendor/wifi/wpa/sockets -c/data/vendor/wifi/wpa/wpa_supplicant.conf -I/vendor/etc/wifi/wpa_supplicant_overlay.conf
 ```
 
-parameter explain:
+Parameter explain:
 
 - `-iwlan0`: using wlan0 interface
 - `-Dnl80211`: using nl8022 driver
@@ -121,7 +128,7 @@ parameter explain:
 Check supplicant config
 
 ```console
-root@a15:/sdcard$ cat /data/vendor/wifi/wpa/wpa_supplicant.conf
+$ cat /data/vendor/wifi/wpa/wpa_supplicant.conf
 update_config=1
 eapol_version=1
 ap_scan=1
@@ -134,7 +141,8 @@ dot11RSNAConfigPMKLifetime=259200
 p2p_optimize_listen_chan=1
 wowlan_disconnect_on_deinit=1
 rsn_overriding=1
-root@a15:/sdcard$ cat /vendor/etc/wifi/wpa_supplicant_overlay.conf
+
+$ cat /vendor/etc/wifi/wpa_supplicant_overlay.conf
 p2p_disabled=1
 update_config=1
 pmf=1
@@ -163,7 +171,7 @@ wpa_cli
 At this point, device has successfully authenticated with the AP, but device haven't got assigned an IP yet.
 
 ```console
-root@a15:/sdcard$ wpa_cli status
+$ wpa_cli status
 Using interface 'wlan0'
 bssid=32:74:67:2a:ea:31
 freq=2462
@@ -177,7 +185,8 @@ key_mgmt=WPA2-PSK
 wpa_state=COMPLETED
 address=aa:9b:81:39:bd:66
 uuid=98bcf60e-908c-5d03-9fa1-ff81e83de0a2
-root@a15:/sdcard$ ip a show wlan0
+
+$ ip a show wlan0
 53: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 3000
     link/ether 92:9c:72:86:bb:7f brd ff:ff:ff:ff:ff:ff
 ```
@@ -194,7 +203,7 @@ toybox dhcp -i wlan0 -f -v
 ```
 
 ```console
-root@a15:/sdcard$ toybox dhcp -i wlan0 -f -v
+$ toybox dhcp -i wlan0 -f -v
 dhcp started
 Adapter index 53
 MAC aa:9b:81:39:bd:66
@@ -230,13 +239,13 @@ ip route add default via 192.168.169.67 dev wlan0
 ```
 
 ```console
-root@a15:/sdcard$ ip addr add 192.168.169.34/24 dev wlan0
+$ ip addr add 192.168.169.34/24 dev wlan0
 53: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 3000
     link/ether aa:9b:81:39:bd:66 brd ff:ff:ff:ff:ff:ff
     inet 192.168.169.34/24 scope global wlan0
        valid_lft forever preferred_lft forever
 
-root@a15:/sdcard$ ip route add default via 192.168.169.67 dev wlan0
+$ ip route add default via 192.168.169.67 dev wlan0
 RTNETLINK answers: Network is unreachable
 ```
 
@@ -352,7 +361,6 @@ toybox dhcp --help
 ```
 
 ```help
-toybox dhcp --help
 Toybox 0.8.12-android multicall binary (see toybox --help)
 
 usage: dhcp [-fbnqvoCRB] [-i IFACE] [-r IP] [-s PROG] [-p PIDFILE]
