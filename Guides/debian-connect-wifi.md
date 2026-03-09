@@ -1,7 +1,9 @@
 ---
 id: debian-connect-wifi
 aliases: []
-tags: []
+tags:
+  - wifi
+  - wpa_supplicant
 ---
 
 # Debian Wi-Fi usage
@@ -455,7 +457,19 @@ OK
 > q
 ```
 
+At this point device has Successfully authenticate, but does not have IP yet
+
+```console
+$ ip addr show wlo1
+3: wlo1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 94:e6:f7:e4:bb:55 brd ff:ff:ff:ff:ff:ff
+    altname wlp0s20f3
+    altname wlx94e6f7e4bb55
+```
+
 ### Request IPv4
+
+#### Using `dhcpcd`
 
 ```sh
 dhcpcd -n wlo1
@@ -477,6 +491,38 @@ wlo1: adding route to fdb4:b9e8:9cf::/48 via fe80::46a5:6eff:fe3e:45de
 wlo1: adding route to fdb4:b9e8:9cf::/64
 wlo1: soliciting a DHCPv6 lease
 wlo1: ADV fdb4:b9e8:9cf::125/128 from fe80::46a5:6eff:fe3e:45de (0)
+```
+
+#### Manually add IPv4
+
+Assuming the AP already preserved "192.168.1.125" for us:
+
+```sh
+ip addr add 192.168.1.125/24 dev wlo1
+ip route add default via 192.168.1.1 dev wlo1
+```
+
+```console
+root@wifiteam-laptop-debian:~# ip route
+
+root@wifiteam-laptop-debian:~# ip addr add 192.168.1.125/24 dev wlo1
+
+root@wifiteam-laptop-debian:~# ip route
+192.168.1.0/24 dev wlo1 proto kernel scope link src 192.168.1.125
+
+root@wifiteam-laptop-debian:~# ip addr show wlo1
+3: wlo1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 94:e6:f7:e4:bb:55 brd ff:ff:ff:ff:ff:ff
+    altname wlp0s20f3
+    altname wlx94e6f7e4bb55
+    inet 192.168.1.125/24 scope global wlo1
+       valid_lft forever preferred_lft forever
+
+root@wifiteam-laptop-debian:~# ip route add default via 192.168.1.1 dev wlo1
+
+root@wifiteam-laptop-debian:~# ip route
+default via 192.168.1.1 dev wlo1
+192.168.1.0/24 dev wlo1 proto kernel scope link src 192.168.1.125
 ```
 
 ### Check IPv4
