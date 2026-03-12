@@ -72,19 +72,19 @@ Look for something like `wlan0`
 $ iw dev
 phy#0
         Interface p2p1
-                ifindex 57
-                wdev 0x5
+                ifindex 55
+                wdev 0x3
                 addr 6e:ac:c2:af:cb:7c
                 type P2P-client
         Interface p2p0
-                ifindex 56
-                wdev 0x4
+                ifindex 54
+                wdev 0x2
                 addr 6e:ac:c2:af:cb:7d
                 type P2P-client
         Interface wlan0
                 ifindex 53
                 wdev 0x1
-                addr 92:9c:72:86:bb:7f
+                addr 6c:ac:c2:af:cb:7d
                 type managed
 ```
 
@@ -97,14 +97,14 @@ ip a show wlan0
 ```console
 $ ip a show wlan0
 53: wlan0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 3000
-    link/ether 92:9c:72:86:bb:7f brd ff:ff:ff:ff:ff:ff
+    link/ether 6c:ac:c2:af:cb:7d brd ff:ff:ff:ff:ff:ff
 ```
 
 Alternatively, just looking under `/sys/class/net` for interface name like `wlan0`, `wlo1`, `enp0s31f6`, `wlp1s7`,...
 
 ```console
 $ cat /sys/class/net/wlan0/address
-92:9c:72:86:bb:7f
+6c:ac:c2:af:cb:7d
 ```
 
 ### Start `wpa_supplicant`
@@ -161,34 +161,87 @@ wpa_cli
 > scan
 > scan_results
 > add_network
-> set_network 0 ssid "Direct-test"
+> set_network 0 ssid "Samsung_R&D_Center_WIFI_TG_2G"
 > set_network 0 psk "********"
 > enable_network 0
 > select_network 0
 > save config
 > quit
 ```
+
+```console
+$ wpa_cli
+wpa_cli v2.12-devel-16
+Copyright (c) 2004-2024, Jouni Malinen <j@w1.fi> and contributors
+
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+
+
+Using interface 'wlan0'
+
+Interactive mode
+
+> add_network
+0
+<3>CTRL-EVENT-NETWORK-ADDED 0
+> set_network 0 ssid "Samsung_R&D_Center_WIFI_TG_2G"
+OK
+wpa_deny_ptk0_rekey wpa_ptk_rekey
+> set_network 0 psk "********"
+OK
+> enable_network 0
+OK
+<3>CTRL-EVENT-STATE-CHANGE id=-1 state=3 BSSID=00:00:00:00:00:00 SSID=
+<3>CTRL-EVENT-SCAN-STARTED
+<3>CTRL-EVENT-SCAN-RESULTS
+<3>WPS-AP-AVAILABLE
+<3>   selected BSS 44:a5:6e:3e:45:e2 ssid='Samsung_R&D_Center_WIFI_TG_2G'
+<3>Trying to associate with SSID 'Samsung_R&D_Center_WIFI_TG_2G'
+<3>CTRL-EVENT-STATE-CHANGE id=0 state=5 BSSID=00:00:00:00:00:00 SSID=Samsung_R&D_Center_WIFI_TG_2G
+<5>nl80211: kernel reports: multicast RX registrations are not supported
+<3>CTRL-EVENT-STATE-CHANGE id=0 state=6 BSSID=00:00:00:00:00:00 SSID=Samsung_R&D_Center_WIFI_TG_2G
+<3>Associated with 44:a5:6e:3e:45:e2
+<3>CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+<3>WPA: RX message 1 of 4-Way Handshake from 44:a5:6e:3e:45:e2 (ver=2)
+<3>CTRL-EVENT-STATE-CHANGE id=0 state=7 BSSID=44:a5:6e:3e:45:e2 SSID=Samsung_R&D_Center_WIFI_TG_2G
+<3>WPA: Sending EAPOL-Key 2/4
+<3>RSN: RX message 3 of 4-Way Handshake from 44:a5:6e:3e:45:e2 (ver=2)
+<3>WPA: Sending EAPOL-Key 4/4
+<3>CTRL-EVENT-STATE-CHANGE id=0 state=8 BSSID=44:a5:6e:3e:45:e2 SSID=Samsung_R&D_Center_WIFI_TG_2G
+<3>WPA: Key negotiation completed with 44:a5:6e:3e:45:e2 [PTK=CCMP GTK=CCMP]
+<3>CTRL-EVENT-CONNECTED - Connection to 44:a5:6e:3e:45:e2 completed [id=0 id_str=]
+<3>CTRL-EVENT-STATE-CHANGE id=0 state=9 BSSID=44:a5:6e:3e:45:e2 SSID=Samsung_R&D_Center_WIFI_TG_2G
+> save_config
+OK
+> q
+```
 At this point, device has successfully authenticated with the AP, but device haven't got assigned an IP yet.
 
 ```console
 $ wpa_cli status
 Using interface 'wlan0'
-bssid=32:74:67:2a:ea:31
-freq=2462
-ssid=Direct-test
+bssid=44:a5:6e:3e:45:e2
+freq=2437
+ssid=Samsung_R&D_Center_WIFI_TG_2G
 id=0
 mode=station
-wifi_generation=4
 pairwise_cipher=CCMP
 group_cipher=CCMP
 key_mgmt=WPA2-PSK
+pmf=1
+mgmt_group_cipher=BIP
 wpa_state=COMPLETED
-address=aa:9b:81:39:bd:66
-uuid=98bcf60e-908c-5d03-9fa1-ff81e83de0a2
+address=6c:ac:c2:af:cb:7d
+uuid=f681489d-5460-5506-a66b-40409f90f846
 
 $ ip a show wlan0
 53: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 3000
-    link/ether 92:9c:72:86:bb:7f brd ff:ff:ff:ff:ff:ff
+    link/ether 6c:ac:c2:af:cb:7d brd ff:ff:ff:ff:ff:ff
+    inet6 fdb4:b9e8:9cf:0:6eac:c2ff:feaf:cb7d/64 scope global dynamic mngtmpaddr
+       valid_lft 5382sec preferred_lft 2682sec
+    inet6 fe80::6eac:c2ff:feaf:cb7d/64 scope link
+       valid_lft forever preferred_lft forever
 ```
 
 So next step, we're gonna manually request an IP address for device using `dhcp`
@@ -206,13 +259,13 @@ toybox dhcp -i wlan0 -f -v
 $ toybox dhcp -i wlan0 -f -v
 dhcp started
 Adapter index 53
-MAC aa:9b:81:39:bd:66
+MAC 6c:ac:c2:af:cb:7d
 Opening raw socket on ifindex 53
 Got raw socket fd 5
 MODE RAW : success
 select wait ....
 Adapter index 53
-MAC aa:9b:81:39:bd:66
+MAC 6c:ac:c2:af:cb:7d
 Sending discover...
 select wait ....
 main sock read
@@ -221,31 +274,45 @@ Got raw socket fd 5
 MODE RAW : success
 select wait ....
 Adapter index 53
-MAC aa:9b:81:39:bd:66
-Sending select for 192.168.169.34...
+MAC 6c:ac:c2:af:cb:7d
+Sending select for 192.168.1.29...
 select wait ....
 main sock read
-Lease of 192.168.169.34 obtained, lease time 3599 from server 192.168.169.67
+Lease of 192.168.1.29 obtained, lease time 43200 from server 192.168.1.1
 select wait ....
 ```
 
-Client successfully obtained Ip "192.168.169.34" from server "192.168.169.67"
+Client successfully obtained Ip "192.168.169.34" from server "192.168.1.29"
 
-Config DHCP for client
+```console
+root@a15:/sdcard$ ip route show table all
+default dev dummy0 table dummy0 proto static scope link
+local 127.0.0.0/8 dev lo table local proto kernel scope host src 127.0.0.1
+local 127.0.0.1 dev lo table local proto kernel scope host src 127.0.0.1
+broadcast 127.255.255.255 dev lo table local proto kernel scope link src 127.0.0.1
+fdb4:b9e8:9cf::/64 dev wlan0 table 1053 proto kernel metric 256 expires 5314sec pref medium
+fdb4:b9e8:9cf::/48 via fe80::46a5:6eff:fe3e:45de dev wlan0 table 1053 proto ra metric 1024 expires 5314sec pref medium
+fe80::/64 dev wlan0 table 1053 proto kernel metric 256 pref medium
+fe80::/64 dev dummy0 table dummy0 proto kernel metric 256 pref medium
+default dev dummy0 table dummy0 proto static metric 1024 pref medium
+local ::1 dev lo table local proto kernel metric 0 pref medium
+local fdb4:b9e8:9cf:0:6eac:c2ff:feaf:cb7d dev wlan0 table local proto kernel metric 0 pref medium
+local fe80::4032:3bff:fe80:e87e dev dummy0 table local proto kernel metric 0 pref medium
+local fe80::6eac:c2ff:feaf:cb7d dev wlan0 table local proto kernel metric 0 pref medium
+multicast ff00::/8 dev dummy0 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev wlan0 table local proto kernel metric 256 pref medium
+```
+
+Manually config IPv4 and add route
 
 ```sh
-ip addr add 192.168.169.34/24 dev wlan0
-ip route add default via 192.168.169.67 dev wlan0
+ip addr add 192.168.1.29/24 dev wlan0
+ip route add default via 192.168.1.1 dev wlan0
 ```
 
 ```console
-$ ip addr add 192.168.169.34/24 dev wlan0
-53: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 3000
-    link/ether aa:9b:81:39:bd:66 brd ff:ff:ff:ff:ff:ff
-    inet 192.168.169.34/24 scope global wlan0
-       valid_lft forever preferred_lft forever
-
-$ ip route add default via 192.168.169.67 dev wlan0
+$ ip addr add 192.168.1.29/24 dev wlan0
+$ ip route add default via 192.168.1.1 dev wlan0
 RTNETLINK answers: Network is unreachable
 ```
 
