@@ -49,11 +49,11 @@ echo $ANDROID_HOME
 1. First create a new workspace.
 
     ```sh
-    p4 client -t SecSettings_BENI_VANCANH-NG SecSettings_YourClientName
+    p4 client -t [Your workspace] SecSettings_YourClientName
     ```
 
     > [!IMPORTANT]
-    > My workspace "SecSettings_BENI_VANCANH-NG" could rename or remove overtime.
+    > My workspace "[Your workspace]" could rename or remove overtime.
     > You could ask your coworker for their workspace
     > or just create a new workspace from scratch using this [Workspace template](#workspace-template-b-os)
 
@@ -95,6 +95,7 @@ echo $ANDROID_HOME
     ```sh
     p4 sync ...@32791056
     p4 sync android/android.jar@=32793587
+    p4 unshelve -s 33239575 ... # I Don't know why this works either
     ```
 
 3. Build it
@@ -207,6 +208,10 @@ adb install SecSettings/build/outputs/apk/debug/SecSettings-debug.apk
 -//BENI/SYSTEM/Cinnamon/frameworks/opt/net/wifi/libs/WifiTrackerLib/res/values-*/arrays.xml //[Your workspace]/WifiTrackerLib/res/values-*/arrays.xml
 -//BENI/SYSTEM/Cinnamon/frameworks/opt/net/wifi/libs/WifiTrackerLib/samsung/*/res/values-*/strings.xml //[Your workspace]/WifiTrackerLib/samsung/*/res/values-*/strings.xml
 -//BENI/SYSTEM/Cinnamon/frameworks/opt/net/wifi/libs/WifiTrackerLib/samsung/*/res/values-*/arrays.xml //[Your workspace]/WifiTrackerLib/samsung/*/res/values-*/arrays.xml
+//BENI/SYSTEM/Strawberry/ESSI/android/frameworks/libs/systemui/iconloaderlib/... //[Your workspace]/iconloaderlib/...
+//BENI/SYSTEM/Strawberry/ESSI/android/external/setupcompat/... //[Your workspace]/setupcompat/...
+//BENI/SYSTEM/Strawberry/ESSI/android/external/setupdesign/... //[Your workspace]/setupdesign/...
+//BENI/SYSTEM/Cinnamon/frameworks/base/AconfigFlags.bp //[Your workspace]/AconfigFlags.bp
 ```
 </div>
 </details>
