@@ -69,10 +69,13 @@ tags:
         - [x] SecSettings local build
         - [/] `wpa_supplicant` local build
             - [ ] Minimize local build size
-- [ ] `adb` startup script
-- [ ] MemOS
-    - [ ] Run with local model via Ollama
-- [ ] Email reply: Request to check the issue of transferring to One UI9.0 / C OS
+- [x] `adb` startup script
+- [-] MemOS
+    - [-] Run with local model via Ollama
+- [x] Email reply: Request to check the issue of transferring to One UI9.0 / C OS
+- [/] Wi-Fi RL
+    - [/] Select Model
+- [ ] Swarm review bot
 
 > [!NOTE]
 >
