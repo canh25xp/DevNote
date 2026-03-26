@@ -49,11 +49,11 @@ echo $ANDROID_HOME
 1. First create a new workspace.
 
     ```sh
-    p4 client -t [Your workspace] SecSettings_YourClientName
+    p4 client -t SRV_DSS_SECSETTINGS_BENI_VANCANH_NG SecSettings_YourClientName
     ```
 
     > [!IMPORTANT]
-    > My workspace "[Your workspace]" could rename or remove overtime.
+    > My workspace "SRV_DSS_SECSETTINGS_BENI_VANCANH_NG" could rename or remove overtime.
     > You could ask your coworker for their workspace
     > or just create a new workspace from scratch using this [Workspace template](#workspace-template-b-os)
 
