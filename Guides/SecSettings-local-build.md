@@ -90,11 +90,11 @@ echo $ANDROID_HOME
          ***** PBS Success at : Local *****
     ```
 
-    Then You should sync whole workspace to CL@32791056 then sync the `android.jar` to CL@32793587:
+    Then You should sync whole workspace to CL@32791056 then sync only files in CL@32793587:
 
     ```sh
     p4 sync ...@32791056
-    p4 sync android/android.jar@=32793587
+    p4 sync ...@=32793587
     p4 unshelve -s 33239575 ... # I Don't know why this works either
     ```
 
