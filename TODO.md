@@ -79,6 +79,9 @@ tags:
     - [ ] Download and flash binary with qb API and odin4 CLI.
 - [ ] RAG (agent builder) + utopia knox bot for issue assignment.
 - [ ] Cline multi-agents review
+- [/] PLM issue resolver
+- [/] PLM API request
+- [ ] CodeReviewTemplates contribution
 
 > [!NOTE]
 >
