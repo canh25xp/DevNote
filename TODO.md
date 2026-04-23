@@ -88,13 +88,13 @@ tags:
 
 > [!NOTE]
 >
-> - [ ] Not started
-> - [/] Half Done/In-progress
-> - [-] Dropped/Cancelled
-> - [<] On hold/Scheduling
-> - [>] Transferred/Forwarded
-> - [?] Doubt/Question
-> - [!] Important
-> - [x] Completed
+> - [ ] (-N)Not started
+> - [/] (-H)Half Done/In-progress
+> - [-] (-D)Dropped/Cancelled
+> - [<] (-H)On hold/Scheduling
+> - [>] (-T)Transferred/Forwarded
+> - [?] (-Q)Doubt/Question
+> - [!] (-I)Important
+> - [x] (-C)Completed
 
 Keep up good works !
