@@ -85,6 +85,9 @@ tags:
     - [ ] PLM API server
 - [ ] CodeReviewTemplates contribution
 - [ ] Log Graph DB skill build up for Wi-Fi
+- [x] Skill logger
+    - [x] Skill logger server
+    - [x] Skill logger client
 
 > [!NOTE]
 >
