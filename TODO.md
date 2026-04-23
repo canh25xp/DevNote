@@ -80,8 +80,11 @@ tags:
 - [ ] RAG (agent builder) + utopia knox bot for issue assignment.
 - [ ] Cline multi-agents review
 - [/] PLM issue resolver
-- [/] PLM API request
+- [/] PLM API
+    - [x] API request
+    - [ ] PLM API server
 - [ ] CodeReviewTemplates contribution
+- [ ] Log Graph DB skill build up for Wi-Fi
 
 > [!NOTE]
 >
