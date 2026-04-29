@@ -88,6 +88,10 @@ tags:
 - [x] Skill logger
     - [x] Skill logger server
     - [x] Skill logger client
+- [ ] Joern
+    - [ ] C/C++ with compile_commands.json
+    - [ ] java
+    - [ ] SurrealDB integration
 
 > [!NOTE]
 >
