@@ -89,9 +89,10 @@ tags:
     - [x] Skill logger server
     - [x] Skill logger client
 - [ ] Joern
-    - [ ] C/C++ with compile_commands.json
+    - [x] C/C++ with compile_commands.json
     - [ ] java
     - [ ] SurrealDB integration
+- [ ] LOG-GRAPH-DB test wifi skills
 
 > [!NOTE]
 >
