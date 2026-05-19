@@ -73,3 +73,12 @@ default via 192.168.1.1 dev enp3s0 proto dhcp src 192.168.1.122 metric 100
 107.98.0.0/16 via 192.168.1.1 dev enp3s0 proto static metric 100
 192.168.1.0/24 dev enp3s0 proto kernel scope link src 192.168.1.122 metric 100
 ```
+
+## Optional
+
+### Rename connection
+
+```bash
+sudo nmcli connection modify "Wired connection 1" connection.id ethernet
+sudo nmcli connection modify "Wired connection 2" connection.id tethering
+```
