@@ -80,9 +80,9 @@ tags:
 - [ ] RAG (agent builder) + utopia knox bot for issue assignment.
 - [ ] Cline multi-agents review
 - [/] PLM issue resolver
-- [/] PLM API
+- [x] PLM API
     - [x] API request
-    - [ ] PLM API server
+    - [x] PLM API server
 - [ ] CodeReviewTemplates contribution
 - [ ] Log Graph DB skill build up for Wi-Fi
 - [x] Skill logger
@@ -92,7 +92,11 @@ tags:
     - [x] C/C++ with compile_commands.json
     - [ ] java
     - [ ] SurrealDB integration
-- [ ] LOG-GRAPH-DB test wifi skills
+- [-] LOG-GRAPH-DB test wifi skills
+- [/] PLM similar issue search engine
+    - [x] PLM issues scraper
+    - [x] PLM issues search server
+    - [ ] PLM issue search agents skills
 
 > [!NOTE]
 >
