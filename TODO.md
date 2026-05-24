@@ -13,7 +13,7 @@ tags:
     - [x] Get affected files
     - [x] VS code, Cline, P4 environment setup script.
     - [x] Write guide for setup VS code, Cline, P4 environment setup script.
-- [ ] Bring-up tool
+- [-] Bring-up tool
     - [x] Find bring-up related files
     - [x] Delta merge
     - [ ] Integrate into Cline workflow
