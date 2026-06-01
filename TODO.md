@@ -78,7 +78,7 @@ tags:
     - [ ] p4 CL description filling
     - [ ] Download and flash binary with qb API and odin4 CLI.
 - [ ] RAG (agent builder) + utopia knox bot for issue assignment.
-- [ ] Cline multi-agents review
+- [-] Cline multi-agents review
 - [/] PLM issue resolver
 - [x] PLM API
     - [x] API request
@@ -88,15 +88,15 @@ tags:
 - [x] Skill logger
     - [x] Skill logger server
     - [x] Skill logger client
-- [ ] Joern
+- [-] Joern
     - [x] C/C++ with compile_commands.json
-    - [ ] java
-    - [ ] SurrealDB integration
+    - [-] java
+    - [-] SurrealDB integration
 - [-] LOG-GRAPH-DB test wifi skills
-- [/] PLM similar issue search engine
+- [-] PLM similar issue search engine
     - [x] PLM issues scraper
     - [x] PLM issues search server
-    - [ ] PLM issue search agents skills
+    - [-] PLM issue search agents skills
 
 > [!NOTE]
 >
